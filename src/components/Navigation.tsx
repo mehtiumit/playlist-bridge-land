@@ -53,10 +53,15 @@ export function Navigation() {
           </motion.div>
 
           <div className="hidden md:flex items-center space-x-8">
-            {['Features', 'How it works', 'Download'].map((item, index) => (
+            {[
+              { label: 'Features', id: 'features' },
+              { label: 'Screenshots', id: 'screenshots' },
+              { label: 'How it works', id: 'how-it-works' },
+              { label: 'Download', id: 'download' }
+            ].map((item, index) => (
               <motion.button
-                key={item}
-                onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
+                key={item.label}
+                onClick={() => scrollToSection(item.id)}
                 className="relative text-muted-foreground hover:text-foreground transition-colors group"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -64,7 +69,7 @@ export function Navigation() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 + 0.3 }}
               >
-                {item}
+                {item.label}
                 <motion.div
                   className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"
                   layoutId="navbar-underline"
@@ -74,7 +79,7 @@ export function Navigation() {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 0.8 }}
             >
               <ThemeToggle />
             </motion.div>
@@ -108,17 +113,22 @@ export function Navigation() {
               className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border/50"
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
-                {['Features', 'How it works', 'Download'].map((item, index) => (
+                {[
+                  { label: 'Features', id: 'features' },
+                  { label: 'Screenshots', id: 'screenshots' },
+                  { label: 'How it works', id: 'how-it-works' },
+                  { label: 'Download', id: 'download' }
+                ].map((item, index) => (
                   <motion.button
-                    key={item}
-                    onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
+                    key={item.label}
+                    onClick={() => scrollToSection(item.id)}
                     className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-primary/10 rounded-lg transition-all"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    {item}
+                    {item.label}
                   </motion.button>
                 ))}
               </div>
