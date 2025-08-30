@@ -10,7 +10,7 @@ const projectRoot = process.env.PROJECT_ROOT || import.meta.dirname;
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/playlist-bridge/", // GitHub Pages için önemli
+  base: "/playlist-bridge-land/", // GitHub Pages için önemli (repo adı ile eşleşecek şekilde güncellendi)
   plugins: [
     react(),
     tailwindcss(),
