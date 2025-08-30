@@ -94,5 +94,6 @@
         "packages": [
             "packages/*"
         ]
-    }
+    },
+    "homepage": "https://mehtiumit.github.io/playlist-bridge"
 }
