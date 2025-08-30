@@ -12,48 +12,48 @@
 }
 
 :root {
-  --background: oklch(0.15 0.02 250);
+  --background: oklch(0.1 0.05 280);
   --foreground: oklch(0.98 0 0);
-  --card: oklch(0.2 0.03 250);
+  --card: oklch(0.15 0.08 280);
   --card-foreground: oklch(0.95 0 0);
-  --popover: oklch(0.2 0.03 250);
+  --popover: oklch(0.15 0.08 280);
   --popover-foreground: oklch(0.95 0 0);
-  --primary: oklch(0.7 0.15 145);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.6 0.2 25);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.25 0.02 250);
+  --primary: oklch(0.75 0.25 145);
+  --primary-foreground: oklch(0.1 0.05 280);
+  --secondary: oklch(0.7 0.3 25);
+  --secondary-foreground: oklch(0.1 0.05 280);
+  --muted: oklch(0.2 0.05 280);
   --muted-foreground: oklch(0.7 0 0);
-  --accent: oklch(0.75 0.2 50);
-  --accent-foreground: oklch(0.15 0.02 250);
-  --destructive: oklch(0.6 0.2 25);
+  --accent: oklch(0.8 0.3 320);
+  --accent-foreground: oklch(0.1 0.05 280);
+  --destructive: oklch(0.65 0.25 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.3 0.02 250);
-  --input: oklch(0.3 0.02 250);
-  --ring: oklch(0.7 0.15 145);
-  --radius: 0.75rem;
+  --border: oklch(0.25 0.08 280);
+  --input: oklch(0.25 0.08 280);
+  --ring: oklch(0.75 0.25 145);
+  --radius: 1rem;
 }
 
 .dark {
-  --background: oklch(0.1 0.02 250);
+  --background: oklch(0.08 0.05 280);
   --foreground: oklch(0.98 0 0);
-  --card: oklch(0.15 0.03 250);
+  --card: oklch(0.12 0.08 280);
   --card-foreground: oklch(0.95 0 0);
-  --popover: oklch(0.15 0.03 250);
+  --popover: oklch(0.12 0.08 280);
   --popover-foreground: oklch(0.95 0 0);
-  --primary: oklch(0.75 0.18 145);
-  --primary-foreground: oklch(0.1 0.02 250);
-  --secondary: oklch(0.65 0.22 25);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.2 0.02 250);
+  --primary: oklch(0.8 0.28 145);
+  --primary-foreground: oklch(0.08 0.05 280);
+  --secondary: oklch(0.75 0.32 25);
+  --secondary-foreground: oklch(0.08 0.05 280);
+  --muted: oklch(0.18 0.05 280);
   --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.8 0.22 50);
-  --accent-foreground: oklch(0.1 0.02 250);
-  --destructive: oklch(0.65 0.22 25);
+  --accent: oklch(0.85 0.32 320);
+  --accent-foreground: oklch(0.08 0.05 280);
+  --destructive: oklch(0.7 0.28 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.25 0.02 250);
-  --input: oklch(0.25 0.02 250);
-  --ring: oklch(0.75 0.18 145);
+  --border: oklch(0.2 0.08 280);
+  --input: oklch(0.2 0.08 280);
+  --ring: oklch(0.8 0.28 145);
 }
 
 @theme {
@@ -86,18 +86,70 @@
 }
 
 .gradient-bg {
-  background: linear-gradient(135deg, oklch(0.15 0.02 250) 0%, oklch(0.2 0.05 280) 50%, oklch(0.15 0.02 250) 100%);
+  background: linear-gradient(135deg, 
+    oklch(0.1 0.05 280) 0%, 
+    oklch(0.15 0.12 320) 25%,
+    oklch(0.12 0.15 25) 50%,
+    oklch(0.15 0.20 145) 75%,
+    oklch(0.1 0.05 280) 100%);
 }
 
 .hero-gradient {
-  background: radial-gradient(ellipse at center, oklch(0.7 0.15 145 / 0.1) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, 
+    oklch(0.75 0.25 145 / 0.15) 0%, 
+    oklch(0.8 0.3 320 / 0.1) 40%,
+    oklch(0.7 0.3 25 / 0.08) 70%,
+    transparent 100%);
+}
+
+.music-wave {
+  background: linear-gradient(90deg,
+    oklch(0.75 0.25 145) 0%,
+    oklch(0.8 0.3 320) 25%,
+    oklch(0.7 0.3 25) 50%,
+    oklch(0.8 0.3 320) 75%,
+    oklch(0.75 0.25 145) 100%);
+  background-size: 200% 100%;
+  animation: waveFlow 3s ease-in-out infinite;
+}
+
+@keyframes waveFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px oklch(0.75 0.25 145 / 0.3); }
+  50% { box-shadow: 0 0 40px oklch(0.8 0.3 320 / 0.5); }
 }
 
 .card-hover {
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px oklch(0.1 0.02 250 / 0.3);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px oklch(0.1 0.05 280 / 0.4);
+}
+
+.neon-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+.pulsing {
+  animation: pulse 2s ease-in-out infinite;
 }
