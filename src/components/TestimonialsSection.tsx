@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { Card, CardContent } from "@/components/ui/card"
-import { Star, CaretLeft, CaretRight, Heart, MusicNotes, Users } from "@phosphor-icons/react"
+import { BsStar, BsChevronLeft, BsChevronRight, BsHeart, BsMusicNoteBeamed, BsPeople } from "react-icons/bs"
 
 const testimonials = [
   {
@@ -52,10 +52,10 @@ const testimonials = [
 ]
 
 const stats = [
-  { value: "500K+", label: "Playlists Transferred", icon: MusicNotes, color: "text-primary" },
-  { value: "4.9★", label: "App Store Rating", icon: Star, color: "text-accent" },
-  { value: "50M+", label: "Songs Matched", icon: Heart, color: "text-secondary" },
-  { value: "99.2%", label: "Success Rate", icon: Users, color: "text-primary" }
+  { value: "500K+", label: "Playlists Transferred", icon: BsMusicNoteBeamed, color: "text-primary" },
+  { value: "4.9★", label: "App Store Rating", icon: BsStar, color: "text-accent" },
+  { value: "50M+", label: "Songs Matched", icon: BsHeart, color: "text-secondary" },
+  { value: "99.2%", label: "Success Rate", icon: BsPeople, color: "text-primary" }
 ]
 
 export function TestimonialsSection() {
@@ -109,7 +109,7 @@ export function TestimonialsSection() {
               delay: Math.random() * 3,
             }}
           >
-            <Heart size={12} className="text-accent/30" weight="fill" />
+            <BsHeart size={12} className="text-accent/30" />
           </motion.div>
         ))}
       </div>
@@ -128,7 +128,7 @@ export function TestimonialsSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="inline-block p-4 bg-gradient-to-r from-accent/20 to-secondary/20 rounded-2xl mb-6"
           >
-            <Heart size={40} className="text-accent" weight="bold" />
+            <BsHeart size={40} className="text-accent" />
           </motion.div>
           
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
@@ -159,7 +159,7 @@ export function TestimonialsSection() {
                   animate={{ rotate: [0, 10, -10, 0] }}
                   transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
                 >
-                  <stat.icon size={32} className={`${stat.color} mx-auto`} weight="bold" />
+                  <stat.icon size={32} className={`${stat.color} mx-auto`} />
                 </motion.div>
                 <motion.div 
                   className="text-3xl sm:text-4xl font-bold mb-2 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent"
@@ -185,14 +185,14 @@ export function TestimonialsSection() {
               onClick={prevTestimonial}
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
             >
-              <CaretLeft size={20} className="text-white" weight="bold" />
+              <BsChevronLeft size={20} className="text-white" />
             </button>
             
             <button
               onClick={nextTestimonial}
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-gradient-to-r from-accent to-secondary rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
             >
-              <CaretRight size={20} className="text-white" weight="bold" />
+              <BsChevronRight size={20} className="text-white" />
             </button>
 
             {/* Carousel container */}
@@ -222,7 +222,7 @@ export function TestimonialsSection() {
                               animate={{ opacity: 1, rotate: 0 }}
                               transition={{ delay: 0.3 + i * 0.1 }}
                             >
-                              <Star size={24} className="text-accent fill-current" weight="fill" />
+                              <BsStar size={24} className="text-accent fill-current" />
                             </motion.div>
                           ))}
                         </motion.div>

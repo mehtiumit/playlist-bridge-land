@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { TwitterLogo, InstagramLogo, FacebookLogo, GithubLogo, MusicNotes, Heart, Envelope } from "@phosphor-icons/react"
+import { BsTwitter, BsInstagram, BsFacebook, BsGithub, BsMusicNoteBeamed, BsHeart, BsEnvelope } from "react-icons/bs"
 
 export function Footer() {
   return (
@@ -43,7 +43,7 @@ export function Footer() {
             >
               <div className="relative">
                 <div className="w-12 h-12 bg-gradient-to-br from-primary via-accent to-secondary rounded-2xl flex items-center justify-center">
-                  <MusicNotes size={24} className="text-white" weight="bold" />
+                  <BsMusicNoteBeamed size={24} className="text-white" />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-secondary rounded-2xl blur-lg opacity-50 -z-10" />
               </div>
@@ -70,7 +70,7 @@ export function Footer() {
               viewport={{ once: true }}
               className="flex items-center space-x-2 text-sm text-muted-foreground"
             >
-              <Heart size={16} className="text-accent" weight="fill" />
+              <BsHeart size={16} className="text-accent" />
               <span>Made with love for music enthusiasts</span>
             </motion.div>
           </div>
@@ -153,17 +153,17 @@ export function Footer() {
                 © 2024 Playlist Bridge. All rights reserved.
               </p>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <Envelope size={14} />
+                <BsEnvelope size={14} />
                 <span>hello@playlistbridge.com</span>
               </div>
             </div>
             
             <div className="flex items-center space-x-4">
               {[
-                { Icon: TwitterLogo, href: "#", label: "Twitter" },
-                { Icon: InstagramLogo, href: "#", label: "Instagram" },
-                { Icon: FacebookLogo, href: "#", label: "Facebook" },
-                { Icon: GithubLogo, href: "#", label: "GitHub" }
+                { Icon: BsTwitter, href: "#", label: "Twitter" },
+                { Icon: BsInstagram, href: "#", label: "Instagram" },
+                { Icon: BsFacebook, href: "#", label: "Facebook" },
+                { Icon: BsGithub, href: "#", label: "GitHub" }
               ].map((social, index) => (
                 <motion.a
                   key={social.label}

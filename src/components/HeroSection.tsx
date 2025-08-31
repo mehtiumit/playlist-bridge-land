@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
-import { AppleLogo, GooglePlayLogo, MusicNotes, Play, ArrowRight } from "@phosphor-icons/react"
+import { BsApple, BsGooglePlay, BsMusicNoteBeamed, BsPlay, BsArrowRight } from "react-icons/bs"
 
 // Animated wave bars component
 function AnimatedWaves() {
@@ -107,14 +107,14 @@ export function HeroSection() {
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                  <AppleLogo size={24} className="mr-3" weight="bold" />
+                  <BsApple size={24} className="mr-3" />
                   Download on App Store
                 </Button>
               </motion.div>
               
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button size="lg" variant="outline" className="border-2 border-secondary/50 text-secondary hover:bg-gradient-to-r hover:from-secondary/10 hover:to-accent/10 hover:border-secondary px-8 py-4 text-lg font-semibold rounded-2xl backdrop-blur-sm">
-                  <GooglePlayLogo size={24} className="mr-3" weight="bold" />
+                  <BsGooglePlay size={24} className="mr-3" />
                   Get it on Google Play
                 </Button>
               </motion.div>
@@ -128,9 +128,9 @@ export function HeroSection() {
               className="flex flex-wrap gap-4 justify-center lg:justify-start"
             >
               {[
-                { icon: MusicNotes, text: "One-click transfer" },
-                { icon: Play, text: "Smart sync" },
-                { icon: ArrowRight, text: "Cross-platform" }
+                { icon: BsMusicNoteBeamed, text: "One-click transfer" },
+                { icon: BsPlay, text: "Smart sync" },
+                { icon: BsArrowRight, text: "Cross-platform" }
               ].map((feature, index) => (
                 <motion.div
                   key={feature.text}
@@ -178,7 +178,7 @@ export function HeroSection() {
                   >
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
-                        <MusicNotes size={20} className="text-white" weight="bold" />
+                        <BsMusicNoteBeamed size={20} className="text-white" />
                       </div>
                       <span className="text-lg font-bold text-card-foreground">Playlist Bridge</span>
                     </div>
@@ -195,7 +195,7 @@ export function HeroSection() {
                     >
                       <div className="flex items-center space-x-3 mb-3">
                         <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                          <MusicNotes size={14} className="text-white" weight="bold" />
+                          <BsMusicNoteBeamed size={14} className="text-white" />
                         </div>
                         <span className="text-sm font-medium text-card-foreground">My Playlist</span>
                       </div>
@@ -220,7 +220,7 @@ export function HeroSection() {
                       transition={{ duration: 2, repeat: Infinity }}
                     >
                       <div className="w-16 h-16 bg-gradient-to-r from-accent to-secondary rounded-full flex items-center justify-center neon-glow">
-                        <ArrowRight size={24} className="text-white" weight="bold" />
+                        <BsArrowRight size={24} className="text-white" />
                       </div>
                     </motion.div>
 
@@ -233,7 +233,7 @@ export function HeroSection() {
                     >
                       <div className="flex items-center space-x-3 mb-3">
                         <div className="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center">
-                          <Play size={14} className="text-white" weight="bold" />
+                          <BsPlay size={14} className="text-white" />
                         </div>
                         <span className="text-sm font-medium text-card-foreground">Transferred ✓</span>
                       </div>

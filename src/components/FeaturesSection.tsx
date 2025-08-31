@@ -1,31 +1,31 @@
 import { motion } from 'framer-motion'
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowsLeftRight, Shield, Zap, MusicNotes, CloudArrowUp, Timer, Sparkle, Lock } from "@phosphor-icons/react"
+import { BsArrowLeftRight, BsShield, BsLightning, BsMusicNoteBeamed, BsCloudUpload, BsClock, BsStars, BsLock } from "react-icons/bs"
 
 const features = [
   {
-    icon: Zap,
+    icon: BsLightning,
     title: "One-click Transfer",
     description: "Transfer your entire playlist with just one tap. No manual searching or adding songs one by one.",
     gradient: "from-primary to-accent",
     delay: 0
   },
   {
-    icon: ArrowsLeftRight,
+    icon: BsArrowLeftRight,
     title: "Cross-platform Support", 
     description: "Seamlessly move playlists between Spotify and YouTube Music in both directions.",
     gradient: "from-accent to-secondary",
     delay: 0.1
   },
   {
-    icon: MusicNotes,
+    icon: BsMusicNoteBeamed,
     title: "Smart Sync",
     description: "Advanced matching algorithm finds the best version of each song on the destination platform.",
     gradient: "from-secondary to-primary",
     delay: 0.2
   },
   {
-    icon: Shield,
+    icon: BsShield,
     title: "Secure & Private",
     description: "Your data is encrypted and never stored. We only access what's needed for the transfer.",
     gradient: "from-primary via-accent to-secondary",
@@ -77,7 +77,7 @@ export function FeaturesSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="inline-block p-3 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl mb-6"
           >
-            <Sparkle size={32} className="text-primary" weight="bold" />
+            <BsStars size={32} className="text-primary" />
           </motion.div>
           
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
@@ -115,7 +115,7 @@ export function FeaturesSection() {
                     transition={{ duration: 0.6 }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent" />
-                    <feature.icon size={28} className="text-white relative z-10" weight="bold" />
+                    <feature.icon size={28} className="text-white relative z-10" />
                     
                     {/* Rotating glow effect */}
                     <motion.div
@@ -151,9 +151,9 @@ export function FeaturesSection() {
           className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6"
         >
           {[
-            { icon: CloudArrowUp, text: "Instant Transfer", desc: "Real-time playlist sync" },
-            { icon: Timer, text: "Save Time", desc: "Transfer hundreds of songs in seconds" },
-            { icon: Lock, text: "Privacy First", desc: "Zero data retention policy" }
+            { icon: BsCloudUpload, text: "Instant Transfer", desc: "Real-time playlist sync" },
+            { icon: BsClock, text: "Save Time", desc: "Transfer hundreds of songs in seconds" },
+            { icon: BsLock, text: "Privacy First", desc: "Zero data retention policy" }
           ].map((item, index) => (
             <motion.div
               key={item.text}
@@ -164,7 +164,7 @@ export function FeaturesSection() {
               transition={{ delay: 0.6 + index * 0.1 }}
             >
               <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl flex items-center justify-center">
-                <item.icon size={20} className="text-primary" weight="bold" />
+                <item.icon size={20} className="text-primary" />
               </div>
               <div>
                 <h4 className="font-semibold text-card-foreground">{item.text}</h4>

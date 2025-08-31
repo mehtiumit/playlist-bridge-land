@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence, PanInfo } from 'framer-motion'
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, ArrowRight, Play, Pause, DeviceMobile, Sparkle, MusicNotes } from "@phosphor-icons/react"
+import { BsArrowLeft, BsArrowRight, BsPlay, BsPause, BsPhone, BsStars, BsMusicNoteBeamed } from "react-icons/bs"
 
 // Mock screenshot data - in a real app, these would be actual screenshots
 const screenshots = [
@@ -139,7 +139,7 @@ export function AppScreenshots() {
               delay: Math.random() * 5,
             }}
           >
-            <MusicNotes size={14} className="text-primary/20" />
+            <BsMusicNoteBeamed size={14} className="text-primary/20" />
           </motion.div>
         ))}
       </div>
@@ -159,7 +159,7 @@ export function AppScreenshots() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="inline-block p-4 bg-gradient-to-r from-primary/20 via-accent/20 to-secondary/20 rounded-2xl mb-6"
           >
-            <DeviceMobile size={40} className="text-primary" weight="bold" />
+            <BsPhone size={40} className="text-primary" />
           </motion.div>
           
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
@@ -214,7 +214,7 @@ export function AppScreenshots() {
                           <div className={`w-full h-full bg-gradient-to-br ${screenshots[currentIndex].bgClass} flex items-center justify-center relative`}>
                             <div className="text-center space-y-4 p-8">
                               <div className={`w-16 h-16 bg-gradient-to-br ${screenshots[currentIndex].accentClass} rounded-2xl mx-auto flex items-center justify-center`}>
-                                <DeviceMobile size={32} className="text-white" weight="bold" />
+                                <BsPhone size={32} className="text-white" />
                               </div>
                               <div className="space-y-2">
                                 <div className={`h-3 ${screenshots[currentIndex].dotClass}/30 rounded-full`} />
@@ -252,7 +252,7 @@ export function AppScreenshots() {
                   whileHover={{ scale: 1.1, x: -2 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <ArrowLeft size={20} className="text-foreground" />
+                  <BsArrowLeft size={20} className="text-foreground" />
                 </motion.button>
 
                 <motion.button
@@ -261,7 +261,7 @@ export function AppScreenshots() {
                   whileHover={{ scale: 1.1, x: 2 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <ArrowRight size={20} className="text-foreground" />
+                  <BsArrowRight size={20} className="text-foreground" />
                 </motion.button>
               </div>
 
@@ -307,7 +307,7 @@ export function AppScreenshots() {
                           animate={{ rotate: [0, 5, -5, 0] }}
                           transition={{ duration: 2, repeat: Infinity, delay: 1 }}
                         >
-                          <Sparkle size={24} className="text-white" weight="bold" />
+                          <BsStars size={24} className="text-white" />
                         </motion.div>
                         
                         <Button
@@ -316,7 +316,7 @@ export function AppScreenshots() {
                           size="icon"
                           className="h-9 w-9 hover:bg-primary/20"
                         >
-                          {isAutoPlaying ? <Pause size={16} /> : <Play size={16} />}
+                          {isAutoPlaying ? <BsPause size={16} /> : <BsPlay size={16} />}
                         </Button>
                       </div>
 

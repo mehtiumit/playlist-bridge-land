@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
-import { MoonIcon, SunIcon } from "@phosphor-icons/react"
+import { BsMoon, BsSun } from "react-icons/bs"
 
 export function ThemeToggle() {
   const [isDark, setIsDark] = useState(false)
@@ -37,9 +37,9 @@ export function ThemeToggle() {
       className="h-9 w-9"
     >
       {isDark ? (
-        <SunIcon size={18} />
+        <BsSun size={18} />
       ) : (
-        <MoonIcon size={18} />
+        <BsMoon size={18} />
       )}
     </Button>
   )

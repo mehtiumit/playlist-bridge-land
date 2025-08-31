@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
-import { AppleLogo, GooglePlayLogo, Download, Sparkle, CheckCircle, Lightning } from "@phosphor-icons/react"
+import { BsApple, BsGooglePlay, BsDownload, BsStars, BsCheckCircle, BsLightning } from "react-icons/bs"
 
 export function DownloadSection() {
   return (
@@ -31,7 +31,7 @@ export function DownloadSection() {
               delay: Math.random() * 4,
             }}
           >
-            <Download size={12} className="text-primary/20" />
+            <BsDownload size={12} className="text-primary/20" />
           </motion.div>
         ))}
       </div>
@@ -51,7 +51,7 @@ export function DownloadSection() {
             transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 200 }}
             className="inline-block p-6 bg-gradient-to-r from-primary/20 via-accent/20 to-secondary/20 rounded-3xl mb-8"
           >
-            <Download size={48} className="text-primary" weight="bold" />
+            <BsDownload size={48} className="text-primary" />
           </motion.div>
 
           <motion.h2
@@ -91,7 +91,7 @@ export function DownloadSection() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity" />
               <Button size="lg" className="relative bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-10 py-6 text-lg font-bold rounded-2xl shadow-xl">
-                <AppleLogo size={28} className="mr-3" weight="bold" />
+                <BsApple size={28} className="mr-3" />
                 Download on App Store
               </Button>
             </motion.div>
@@ -103,7 +103,7 @@ export function DownloadSection() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-accent to-secondary rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
               <Button size="lg" variant="outline" className="relative border-2 border-secondary/50 text-secondary hover:bg-gradient-to-r hover:from-secondary/10 hover:to-accent/10 hover:border-secondary px-10 py-6 text-lg font-bold rounded-2xl backdrop-blur-sm">
-                <GooglePlayLogo size={28} className="mr-3" weight="bold" />
+                <BsGooglePlay size={28} className="mr-3" />
                 Get it on Google Play
               </Button>
             </motion.div>
@@ -117,9 +117,9 @@ export function DownloadSection() {
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8"
           >
             {[
-              { icon: CheckCircle, text: "Free to download", desc: "No hidden costs" },
-              { icon: Lightning, text: "Instant transfers", desc: "Works in seconds" },
-              { icon: Sparkle, text: "Premium experience", desc: "Ad-free forever" }
+              { icon: BsCheckCircle, text: "Free to download", desc: "No hidden costs" },
+              { icon: BsLightning, text: "Instant transfers", desc: "Works in seconds" },
+              { icon: BsStars, text: "Premium experience", desc: "Ad-free forever" }
             ].map((feature, index) => (
               <motion.div
                 key={feature.text}
@@ -130,7 +130,7 @@ export function DownloadSection() {
                 transition={{ delay: 1 + index * 0.1 }}
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl flex items-center justify-center">
-                  <feature.icon size={24} className="text-primary" weight="bold" />
+                  <feature.icon size={24} className="text-primary" />
                 </div>
                 <div className="text-center">
                   <h4 className="font-bold text-card-foreground">{feature.text}</h4>

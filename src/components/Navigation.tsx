@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "./ThemeToggle"
-import { List, X, MusicNotes } from "@phosphor-icons/react"
+import { BsList, BsX, BsMusicNoteBeamed } from "react-icons/bs"
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -43,7 +43,7 @@ export function Navigation() {
           >
             <div className="relative">
               <div className="w-10 h-10 bg-gradient-to-br from-primary via-accent to-secondary rounded-xl flex items-center justify-center neon-glow">
-                <MusicNotes size={20} className="text-primary-foreground" weight="bold" />
+                <BsMusicNoteBeamed size={20} className="text-primary-foreground" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-secondary rounded-xl blur-sm opacity-50 -z-10"></div>
             </div>
@@ -97,7 +97,7 @@ export function Navigation() {
                 animate={{ rotate: isMobileMenuOpen ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                {isMobileMenuOpen ? <X size={18} /> : <List size={18} />}
+                {isMobileMenuOpen ? <BsX size={18} /> : <BsList size={18} />}
               </motion.div>
             </Button>
           </div>

@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion'
-import { SpotifyLogo, YoutubeLogo, ArrowRight, MusicNotes, Play, ListPlus, CheckCircle } from "@phosphor-icons/react"
+import { BsSpotify, BsYoutube, BsArrowRight, BsMusicNoteBeamed, BsPlay, BsListUl, BsCheckCircle } from "react-icons/bs"
 
 const steps = [
   {
     step: 1,
     title: "Connect Spotify",
     description: "Securely link your Spotify account with one tap",
-    icon: SpotifyLogo,
+    icon: BsSpotify,
     color: "from-primary to-primary/80",
     bgColor: "bg-primary/10",
     details: "OAuth 2.0 secure authentication"
@@ -15,7 +15,7 @@ const steps = [
     step: 2,
     title: "Choose Playlist",
     description: "Select any playlist from your library to transfer",
-    icon: ListPlus,
+    icon: BsListUl,
     color: "from-accent to-accent/80",
     bgColor: "bg-accent/10", 
     details: "Browse all your playlists"
@@ -24,7 +24,7 @@ const steps = [
     step: 3,
     title: "Transfer Complete",
     description: "Watch your playlist appear instantly in YouTube Music",
-    icon: YoutubeLogo,
+    icon: BsYoutube,
     color: "from-secondary to-secondary/80",
     bgColor: "bg-secondary/10",
     details: "Smart song matching included"
@@ -58,7 +58,7 @@ export function HowItWorksSection() {
               delay: Math.random() * 3,
             }}
           >
-            <MusicNotes size={16} className="text-primary/20" />
+            <BsMusicNoteBeamed size={16} className="text-primary/20" />
           </motion.div>
         ))}
       </div>
@@ -77,7 +77,7 @@ export function HowItWorksSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="inline-block p-4 bg-gradient-to-r from-primary/20 via-accent/20 to-secondary/20 rounded-2xl mb-6"
           >
-            <Play size={40} className="text-primary" weight="bold" />
+            <BsPlay size={40} className="text-primary" />
           </motion.div>
           
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
@@ -104,7 +104,7 @@ export function HowItWorksSection() {
               >
                 <div className="flex-shrink-0">
                   <div className={`w-16 h-16 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center relative overflow-hidden`}>
-                    <step.icon size={32} className="text-white relative z-10" weight="bold" />
+                    <step.icon size={32} className="text-white relative z-10" />
                     <div className="absolute inset-0 bg-white/20" />
                   </div>
                   {index < steps.length - 1 && (
@@ -157,7 +157,7 @@ export function HowItWorksSection() {
                     transition={{ duration: 0.6 }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent" />
-                    <step.icon size={40} className="text-white relative z-10" weight="bold" />
+                    <step.icon size={40} className="text-white relative z-10" />
                     
                     {/* Rotating glow */}
                     <motion.div
@@ -195,7 +195,7 @@ export function HowItWorksSection() {
                     // transition={{ duration: 2, repeat: Infinity }}
                   >
                     <div className="w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center shadow-lg">
-                      <ArrowRight size={24} className="text-white" weight="bold" />
+                      <BsArrowRight size={24} className="text-white" />
                     </div>
                   </motion.div>
                 )}
@@ -213,7 +213,7 @@ export function HowItWorksSection() {
           className="text-center mt-20"
         >
           <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 rounded-3xl p-8 backdrop-blur-sm border border-border/30">
-            <CheckCircle size={48} className="text-primary mx-auto mb-4" weight="bold" />
+            <BsCheckCircle size={48} className="text-primary mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-card-foreground mb-4">Ready to Get Started?</h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               Join thousands of music lovers who have already transferred millions of songs with Playlist Bridge.
