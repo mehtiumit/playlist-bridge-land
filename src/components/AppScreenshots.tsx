@@ -1,8 +1,13 @@
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence, PanInfo } from 'framer-motion'
-import { Card, CardContent } from "@/components/ui/card"
+import { motion, AnimatePresence, PanInfo, useAnimation } from 'framer-motion'
 import { Button } from "@/components/ui/button"
-import { BsArrowLeft, BsArrowRight, BsPlay, BsPause, BsPhone, BsStars, BsMusicNoteBeamed } from "react-icons/bs"
+import { Card, CardContent } from "@/components/ui/card"
+import { BsPhone, BsChevronRight, BsChevronLeft, BsStars, BsPlay, BsPause, BsMusicNoteBeamed, BsArrowLeft, BsArrowRight } from "react-icons/bs"
+
+import homepageImg from "../api/screenshots/homepage.png"
+import playlistsImg from "../api/screenshots/playlists.png"
+import selectPlaylistImg from "../api/screenshots/selectplaylist.png"
+import transferCompleteImg from "../api/screenshots/transfercomplete.png"
 
 // Mock screenshot data - in a real app, these would be actual screenshots
 const screenshots = [
@@ -10,56 +15,45 @@ const screenshots = [
     id: 1,
     title: "Connect Your Accounts",
     description: "Securely link both Spotify and YouTube Music with OAuth authentication",
-    image: "/api/placeholder/300/600", // Using placeholder for demo
+    image: homepageImg, // Using placeholder for demo
     accent: "primary",
     accentClass: "from-primary to-primary/70",
     bgClass: "from-primary/20 via-primary/10 to-background",
     dotClass: "bg-primary",
-    features: ["OAuth 2.0 Security", "One-tap connection", "Auto-sync enabled"]
+    features: ["Secure login", "OAuth 2.0", "Data privacy"]
   },
   {
     id: 2,
-    title: "Browse Your Playlists", 
+    title: "Browse Your Playlists",
     description: "View all your playlists in a beautiful, organized interface",
-    image: "/api/placeholder/300/600",
+    image: playlistsImg,
     accent: "accent",
     accentClass: "from-accent to-accent/70",
     bgClass: "from-accent/20 via-accent/10 to-background",
     dotClass: "bg-accent",
-    features: ["Smart categorization", "Search & filter", "Recently played"]
+    features: ["Grid view", "Playlist details", "Metadata sync"]
   },
   {
     id: 3,
     title: "Select & Transfer",
     description: "Choose any playlist and transfer it with advanced song matching",
-    image: "/api/placeholder/300/600",
+    image: selectPlaylistImg,
     accent: "secondary",
     accentClass: "from-secondary to-secondary/70",
     bgClass: "from-secondary/20 via-secondary/10 to-background",
     dotClass: "bg-secondary",
-    features: ["Bulk transfer", "Smart matching", "Progress tracking"]
+    features: ["Smart matching", "Batch selection", "Progress tracking"]
   },
   {
     id: 4,
     title: "Transfer Complete",
     description: "Your playlist is now available on your destination platform",
-    image: "/api/placeholder/300/600",
+    image: transferCompleteImg,
     accent: "primary",
     accentClass: "from-primary to-primary/70",
     bgClass: "from-primary/20 via-primary/10 to-background",
     dotClass: "bg-primary",
     features: ["Instant sync", "Match reports", "Backup options"]
-  },
-  {
-    id: 5,
-    title: "Manage & Sync",
-    description: "Keep your playlists in sync across platforms automatically",
-    image: "/api/placeholder/300/600",
-    accent: "accent",
-    accentClass: "from-accent to-accent/70",
-    bgClass: "from-accent/20 via-accent/10 to-background",
-    dotClass: "bg-accent",
-    features: ["Auto-sync", "Version control", "Conflict resolution"]
   }
 ]
 
@@ -70,7 +64,7 @@ export function AppScreenshots() {
   // Auto-advance slides
   useEffect(() => {
     if (!isAutoPlaying) return
-    
+
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % screenshots.length)
     }, 4000)
@@ -103,7 +97,7 @@ export function AppScreenshots() {
 
   const handleDragEnd = (event: any, info: PanInfo) => {
     const swipeThreshold = 50
-    
+
     if (info.offset.x > swipeThreshold) {
       prevSlide()
     } else if (info.offset.x < -swipeThreshold) {
@@ -116,7 +110,7 @@ export function AppScreenshots() {
       {/* Background with animated gradients */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background" />
       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/10 to-secondary/5" />
-      
+
       {/* Floating music notes */}
       <div className="absolute inset-0">
         {Array.from({ length: 20 }).map((_, i) => (
@@ -161,7 +155,7 @@ export function AppScreenshots() {
           >
             <BsPhone size={40} className="text-primary" />
           </motion.div>
-          
+
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
               App Screenshots
@@ -175,28 +169,28 @@ export function AppScreenshots() {
         {/* Main Slider Container */}
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            
+
             {/* Screenshots Carousel */}
-            <motion.div 
+            <motion.div
               className="relative"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              
+
               {/* Phone mockup container */}
-              <div className="relative max-w-sm mx-auto">
-                
+              <div className="relative w-[360px] h-[720px] mx-auto">
+
                 {/* Phone frame */}
-                <div className="relative bg-gradient-to-br from-card via-card/80 to-muted/50 rounded-[3rem] p-3 shadow-2xl border border-border/50">
-                  <div className="bg-background rounded-[2.5rem] overflow-hidden relative">
-                    
+                <div className="relative w-full h-full bg-gradient-to-br from-card via-card/80 to-muted/50 rounded-[3rem] p-3 shadow-2xl border border-border/50">
+                  <div className="bg-background rounded-[2.5rem] overflow-hidden relative w-full h-full">
+
                     {/* Phone notch */}
                     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-card rounded-b-2xl z-20" />
-                    
-                    {/* Screenshot container with aspect ratio */}
-                    <div className="aspect-[9/19.5] relative overflow-hidden">
+
+                    {/* Screenshot container */}
+                    <div className="w-full h-full relative overflow-hidden">
                       <AnimatePresence mode="wait">
                         <motion.div
                           key={currentIndex}
@@ -210,37 +204,22 @@ export function AppScreenshots() {
                           dragElastic={0.1}
                           onDragEnd={handleDragEnd}
                         >
-                          {/* Gradient placeholder for screenshot */}
-                          <div className={`w-full h-full bg-gradient-to-br ${screenshots[currentIndex].bgClass} flex items-center justify-center relative`}>
-                            <div className="text-center space-y-4 p-8">
-                              <div className={`w-16 h-16 bg-gradient-to-br ${screenshots[currentIndex].accentClass} rounded-2xl mx-auto flex items-center justify-center`}>
-                                <BsPhone size={32} className="text-white" />
-                              </div>
-                              <div className="space-y-2">
-                                <div className={`h-3 ${screenshots[currentIndex].dotClass}/30 rounded-full`} />
-                                <div className={`h-3 ${screenshots[currentIndex].dotClass}/20 rounded-full w-3/4 mx-auto`} />
-                                <div className={`h-3 ${screenshots[currentIndex].dotClass}/15 rounded-full w-1/2 mx-auto`} />
-                              </div>
-                            </div>
-                            
-                            {/* Animated elements */}
-                            <motion.div
-                              className="absolute inset-0 pointer-events-none"
-                              animate={{
-                                background: [
-                                  `radial-gradient(circle at 20% 20%, oklch(0.75 0.25 145 / 0.1) 0%, transparent 50%)`,
-                                  `radial-gradient(circle at 80% 80%, oklch(0.8 0.3 320 / 0.1) 0%, transparent 50%)`,
-                                  `radial-gradient(circle at 20% 20%, oklch(0.75 0.25 145 / 0.1) 0%, transparent 50%)`
-                                ]
-                              }}
-                              transition={{ duration: 4, repeat: Infinity }}
+                          {/* Screenshot Image */}
+                          <div className="w-full h-full relative">
+                            <img
+                              src={screenshots[currentIndex].image}
+                              alt={screenshots[currentIndex].title}
+                              className="w-full h-full object-cover"
                             />
+
+                            {/* Overlay gradient for depth */}
+                            <div className={`absolute inset-0 bg-gradient-to-t ${screenshots[currentIndex].accentClass} opacity-10 mix-blend-overlay`} />
                           </div>
                         </motion.div>
                       </AnimatePresence>
                     </div>
                   </div>
-                  
+
                   {/* Glowing effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/20 to-secondary/20 rounded-[3rem] blur-xl opacity-50 -z-10" />
                 </div>
@@ -271,11 +250,10 @@ export function AppScreenshots() {
                   <motion.button
                     key={index}
                     onClick={() => goToSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      index === currentIndex 
-                        ? 'bg-primary w-8' 
-                        : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                    }`}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
+                      ? 'bg-primary w-8'
+                      : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                      }`}
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.9 }}
                   />
@@ -309,7 +287,7 @@ export function AppScreenshots() {
                         >
                           <BsStars size={24} className="text-white" />
                         </motion.div>
-                        
+
                         <Button
                           onClick={toggleAutoPlay}
                           variant="ghost"
@@ -323,7 +301,7 @@ export function AppScreenshots() {
                       <h3 className="text-2xl font-bold text-card-foreground mb-4">
                         {screenshots[currentIndex].title}
                       </h3>
-                      
+
                       <p className="text-muted-foreground mb-6 leading-relaxed">
                         {screenshots[currentIndex].description}
                       </p>

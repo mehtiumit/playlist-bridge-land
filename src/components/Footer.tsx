@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { BsTwitter, BsInstagram, BsFacebook, BsGithub, BsMusicNoteBeamed, BsHeart, BsEnvelope } from "react-icons/bs"
+import { BsGithub, BsMusicNoteBeamed, BsHeart, BsEnvelope } from "react-icons/bs"
 
 export function Footer() {
   return (
@@ -7,7 +7,7 @@ export function Footer() {
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-muted" />
       <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-accent/5 to-secondary/5" />
-      
+
       {/* Background effects */}
       <div className="absolute inset-0">
         {Array.from({ length: 20 }).map((_, i) => (
@@ -51,7 +51,7 @@ export function Footer() {
                 Playlist Bridge
               </span>
             </motion.div>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -59,10 +59,10 @@ export function Footer() {
               viewport={{ once: true }}
               className="text-muted-foreground max-w-md leading-relaxed mb-6"
             >
-              The easiest way to transfer your playlists between Spotify and YouTube Music. 
+              The easiest way to transfer your playlists between Spotify and YouTube Music.
               Keep your music collection synchronized across all platforms with style and security.
             </motion.p>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ export function Footer() {
               <span>Made with love for music enthusiasts</span>
             </motion.div>
           </div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -84,10 +84,9 @@ export function Footer() {
             <h3 className="font-bold text-card-foreground mb-6 text-lg">Legal</h3>
             <ul className="space-y-4">
               {[
-                { text: "Privacy Policy", href: "#" },
-                { text: "Terms of Service", href: "#" },
-                { text: "Cookie Policy", href: "#" },
-                { text: "Data Security", href: "#" }
+                { text: "Privacy Policy", href: "https://umitsamaritansoft.com/privacy-terms/playlistBridge/" },
+                { text: "Terms of Service", href: "https://umitsamaritansoft.com/privacy-terms/playlistBridge/#terms" },
+                { text: "Data Security", href: "https://umitsamaritansoft.com/privacy-terms/playlistBridge/#terms" }
               ].map((item, index) => (
                 <motion.li
                   key={item.text}
@@ -96,8 +95,8 @@ export function Footer() {
                   transition={{ delay: 0.4 + index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <a 
-                    href={item.href} 
+                  <a
+                    href={item.href}
                     className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-2 inline-block"
                   >
                     {item.text}
@@ -106,7 +105,7 @@ export function Footer() {
               ))}
             </ul>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -116,10 +115,8 @@ export function Footer() {
             <h3 className="font-bold text-card-foreground mb-6 text-lg">Support</h3>
             <ul className="space-y-4">
               {[
-                { text: "Help Center", href: "#" },
                 { text: "Contact Us", href: "#" },
                 { text: "FAQ", href: "#" },
-                { text: "Status Page", href: "#" }
               ].map((item, index) => (
                 <motion.li
                   key={item.text}
@@ -128,8 +125,8 @@ export function Footer() {
                   transition={{ delay: 0.6 + index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <a 
-                    href={item.href} 
+                  <a
+                    href={item.href}
                     className="text-muted-foreground hover:text-accent transition-all duration-300 hover:translate-x-2 inline-block"
                   >
                     {item.text}
@@ -139,7 +136,7 @@ export function Footer() {
             </ul>
           </motion.div>
         </div>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -154,16 +151,13 @@ export function Footer() {
               </p>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <BsEnvelope size={14} />
-                <span>hello@playlistbridge.com</span>
+                <span>mehti.yldrm@gmail.com</span>
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-4">
               {[
-                { Icon: BsTwitter, href: "#", label: "Twitter" },
-                { Icon: BsInstagram, href: "#", label: "Instagram" },
-                { Icon: BsFacebook, href: "#", label: "Facebook" },
-                { Icon: BsGithub, href: "#", label: "GitHub" }
+                { Icon: BsGithub, href: "https://github.com/mehtiumit", label: "GitHub" }
               ].map((social, index) => (
                 <motion.a
                   key={social.label}
@@ -180,36 +174,6 @@ export function Footer() {
                   <social.Icon size={18} className="group-hover:scale-110 transition-transform" />
                 </motion.a>
               ))}
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Newsletter signup */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-12 text-center"
-        >
-          <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 rounded-2xl p-8 backdrop-blur-sm border border-border/30">
-            <h3 className="text-xl font-bold text-card-foreground mb-4">Stay in the Loop</h3>
-            <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-              Get updates on new features, platform support, and exclusive music tips.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-background/50 border border-border/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all"
-              />
-              <motion.button
-                className="bg-gradient-to-r from-primary to-accent text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Subscribe
-              </motion.button>
             </div>
           </div>
         </motion.div>

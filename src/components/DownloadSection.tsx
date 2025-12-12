@@ -8,7 +8,7 @@ export function DownloadSection() {
       {/* Dynamic background */}
       <div className="absolute inset-0 bg-gradient-to-br from-muted/30 via-background to-muted/50" />
       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/10 to-secondary/5" />
-      
+
       {/* Animated background elements */}
       <div className="absolute inset-0">
         {Array.from({ length: 30 }).map((_, i) => (
@@ -66,17 +66,17 @@ export function DownloadSection() {
             <br />
             <span className="text-foreground">Your Playlists?</span>
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
           >
-            Download Playlist Bridge today and join thousands of music lovers who've discovered 
+            Download Playlist Bridge today and join thousands of music lovers who've discovered
             the magic of seamless playlist transfers. Your music, everywhere you want it.
           </motion.p>
-          
+
           {/* Download buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -85,30 +85,32 @@ export function DownloadSection() {
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
           >
             <motion.div
-              whileHover={{ scale: 1.05, y: -5 }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity" />
-              <Button size="lg" className="relative bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-10 py-6 text-lg font-bold rounded-2xl shadow-xl">
-                <BsApple size={28} className="mr-3" />
-                Download on App Store
+              <Button size="lg" className="bg-black hover:bg-black/90 text-white px-8 py-6 h-auto text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/10 group">
+                <BsApple size={28} className="mr-3 group-hover:scale-110 transition-transform" />
+                <div className="flex flex-col items-start leading-none">
+                  <span className="text-[10px] uppercase tracking-wider opacity-80 font-medium">Download on the</span>
+                  <span className="text-xl font-bold">App Store</span>
+                </div>
               </Button>
             </motion.div>
-            
+
             <motion.div
-              whileHover={{ scale: 1.05, y: -5 }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-accent to-secondary rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
-              <Button size="lg" variant="outline" className="relative border-2 border-secondary/50 text-secondary hover:bg-gradient-to-r hover:from-secondary/10 hover:to-accent/10 hover:border-secondary px-10 py-6 text-lg font-bold rounded-2xl backdrop-blur-sm">
-                <BsGooglePlay size={28} className="mr-3" />
-                Get it on Google Play
+              <Button size="lg" className="bg-black hover:bg-black/90 text-white px-8 py-6 h-auto text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/10 group">
+                <BsGooglePlay size={26} className="mr-3 group-hover:scale-110 transition-transform" />
+                <div className="flex flex-col items-start leading-none">
+                  <span className="text-[10px] uppercase tracking-wider opacity-80 font-medium">Get it on</span>
+                  <span className="text-xl font-bold">Google Play</span>
+                </div>
               </Button>
             </motion.div>
           </motion.div>
-          
+
           {/* Features highlights */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -149,11 +151,11 @@ export function DownloadSection() {
           >
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              <span>500K+ downloads</span>
+              <span>0 downloads</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-              <span>4.9★ rating</span>
+              <span>5 rating</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-secondary rounded-full animate-pulse" />
@@ -170,7 +172,7 @@ export function DownloadSection() {
           >
             <h3 className="text-2xl font-bold text-card-foreground mb-4">What are you waiting for?</h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Your playlists are ready to travel. Download Playlist Bridge now and experience 
+              Your playlists are ready to travel. Download Playlist Bridge now and experience
               the freedom of having your music everywhere you go.
             </p>
             <motion.button

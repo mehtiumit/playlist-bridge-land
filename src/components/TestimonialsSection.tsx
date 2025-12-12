@@ -5,57 +5,21 @@ import { BsStar, BsChevronLeft, BsChevronRight, BsHeart, BsMusicNoteBeamed, BsPe
 
 const testimonials = [
   {
-    name: "Sarah Chen",
-    handle: "@sarahmusic",
-    avatar: "SC",
+    name: "Mehti Ümit Yıldırım",
+    handle: "@Umit",
+    avatar: "UY",
     rating: 5,
     text: "Finally! I can move my carefully curated playlists between platforms. Works flawlessly every time.",
     platform: "Spotify → YouTube Music",
     color: "from-primary to-accent"
-  },
-  {
-    name: "Mike Rodriguez", 
-    handle: "@mikebeats",
-    avatar: "MR",
-    rating: 5,
-    text: "Saved me hours of manual work. The smart matching is incredibly accurate at finding the right songs.",
-    platform: "YouTube Music → Spotify",
-    color: "from-accent to-secondary"
-  },
-  {
-    name: "Emma Thompson",
-    handle: "@emmaplaylists", 
-    avatar: "ET",
-    rating: 5,
-    text: "Love how secure it is. No weird permissions, just does exactly what it promises. Highly recommend!",
-    platform: "Cross-platform Pro",
-    color: "from-secondary to-primary"
-  },
-  {
-    name: "David Kim",
-    handle: "@davidvibes",
-    avatar: "DK", 
-    rating: 5,
-    text: "Transferred 20+ playlists in minutes! The interface is so clean and the process is incredibly intuitive.",
-    platform: "Spotify → YouTube Music",
-    color: "from-primary to-accent"
-  },
-  {
-    name: "Luna Martinez",
-    handle: "@lunabeats",
-    avatar: "LM",
-    rating: 5, 
-    text: "Best music app I've ever used. Finally found a way to keep my music organized across all platforms.",
-    platform: "Multi-platform User",
-    color: "from-accent to-secondary"
   }
 ]
 
 const stats = [
-  { value: "500K+", label: "Playlists Transferred", icon: BsMusicNoteBeamed, color: "text-primary" },
-  { value: "4.9★", label: "App Store Rating", icon: BsStar, color: "text-accent" },
-  { value: "50M+", label: "Songs Matched", icon: BsHeart, color: "text-secondary" },
-  { value: "99.2%", label: "Success Rate", icon: BsPeople, color: "text-primary" }
+  { value: "0", label: "Playlists Transferred", icon: BsMusicNoteBeamed, color: "text-primary" },
+  { value: "0", label: "App Store Rating", icon: BsStar, color: "text-accent" },
+  { value: "0", label: "Songs Matched", icon: BsHeart, color: "text-secondary" },
+  { value: "0", label: "Success Rate", icon: BsPeople, color: "text-primary" }
 ]
 
 export function TestimonialsSection() {
@@ -65,11 +29,11 @@ export function TestimonialsSection() {
   // Auto-rotate testimonials
   useEffect(() => {
     if (!isAutoPlaying) return
-    
+
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length)
     }, 4000)
-    
+
     return () => clearInterval(interval)
   }, [isAutoPlaying])
 
@@ -87,7 +51,7 @@ export function TestimonialsSection() {
     <section className="py-24 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
-      
+
       {/* Floating hearts */}
       <div className="absolute inset-0">
         {Array.from({ length: 15 }).map((_, i) => (
@@ -130,7 +94,7 @@ export function TestimonialsSection() {
           >
             <BsHeart size={40} className="text-accent" />
           </motion.div>
-          
+
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-accent via-secondary to-primary bg-clip-text text-transparent">
               Loved by Music Fans
@@ -161,7 +125,7 @@ export function TestimonialsSection() {
                 >
                   <stat.icon size={32} className={`${stat.color} mx-auto`} />
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="text-3xl sm:text-4xl font-bold mb-2 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
@@ -187,7 +151,7 @@ export function TestimonialsSection() {
             >
               <BsChevronLeft size={20} className="text-white" />
             </button>
-            
+
             <button
               onClick={nextTestimonial}
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-gradient-to-r from-accent to-secondary rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
@@ -226,7 +190,7 @@ export function TestimonialsSection() {
                             </motion.div>
                           ))}
                         </motion.div>
-                        
+
                         {/* Quote */}
                         <motion.blockquote
                           className="text-xl md:text-2xl text-card-foreground mb-8 leading-relaxed font-medium"
@@ -236,7 +200,7 @@ export function TestimonialsSection() {
                         >
                           "{testimonials[currentIndex].text}"
                         </motion.blockquote>
-                        
+
                         {/* User info */}
                         <motion.div
                           className="flex items-center justify-center space-x-4"
@@ -277,11 +241,10 @@ export function TestimonialsSection() {
                     setCurrentIndex(index)
                     setIsAutoPlaying(false)
                   }}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex 
-                      ? 'bg-primary scale-125' 
-                      : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                  }`}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
+                    ? 'bg-primary scale-125'
+                    : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                    }`}
                 />
               ))}
             </div>
